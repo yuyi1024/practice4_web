@@ -1,0 +1,31 @@
+table{
+    font-size: 10px;
+    line-height: 25px;
+    font-family: "Arial Black";
+    color: #2F4F4F;
+    border: 1px #C0C0C0 solid;
+}
+
+th{
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #2F4F4F;
+}
+
+a{
+    color: #0000FF;
+}
+a:visited{
+    color: #D2691E;
+}
+a:hover{
+    color: #FA8072;
+    font-weight: bold;
+    background-color: #FFF8DC;
+}
+
+input[value="修改"]{
+    background-color: #4682B4;
+    color: #FFFFFF;
+}

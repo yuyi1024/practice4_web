@@ -6,51 +6,39 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String msg = "";
+    if(request.getParameter("msg") != null){
+       msg = new String(request.getParameter("msg").getBytes("ISO-8859-1"), "UTF-8");
+    }
+%>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
+    <p class="alert"><%= msg %></p>
 
-    <form name="" method="GET" action="two.jsp">
-        <h2>大家來訂飲料(1/18下午)</h2>
+    <form name="drinkGetForm" method="GET" action="two.jsp">
+        <jsp:include page="/drinkForm.jsp">
+            <jsp:param name="method" value="GET"></jsp:param>
+        </jsp:include>
+    </form>
 
-        <label>名字</label>
-        <input type="text" name="clientName">
-
-        <label>飲料名稱</label>
-        <select name="drinkName">
-            <option name="" value=""></option>
-            <option name="" value=""></option>
-            <option name="" value=""></option>
-            <option name="" value=""></option>
-        </select>
-
-        <label>加料</label>
-        <input type="checkbox" name="toppings[]">
-        <input type="checkbox" name="toppings[]">
-        <input type="checkbox" name="toppings[]">
-        <input type="checkbox" name="toppings[]">
-
-        <label>冰塊</label>
-        <input type="radio" name="ice">
-        <input type="radio" name="ice">
-        <input type="radio" name="ice">
-        <input type="radio" name="ice">
-
-        <label>甜度</label>
-        <input type="radio" name="sugar">
-        <input type="radio" name="sugar">
-        <input type="radio" name="sugar">
-        <input type="radio" name="sugar">
-
-
-        <label>備註</label>
-        <textarea name="memo"></textarea>
-
-        <label></label>
-        <input type="hidden" name="">
+    <form name="drinkPostForm" method="Post" action="two.jsp">
+        <jsp:include page="/drinkForm.jsp">
+            <jsp:param name="method" value="POST"></jsp:param>
+        </jsp:include>
     </form>
 
 </body>
 </html>
+
+<style>
+    form{
+        background-color: antiquewhite;
+    }
+    .alert{
+        color: darkred;
+    }
+</style>

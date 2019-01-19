@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Popup View</title>
+    </head>
+    <body>
+        <form name="form1">
+            ptext <input type="text" name="ptext"><br>
+            <input type="button" value="Button4" onclick="addOption();">
+        </form>
+    </body>
+</html>
+
+
+<script>
+    function addOption(){
+        var optionName = document.getElementsByName("ptext")[0].value;
+        if(optionName == ""){
+            alert("請輸入 ptext 值！");
+        } else{
+            window.opener.callback(optionName);
+            window.close();
+        }
+    }
+</script>

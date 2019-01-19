@@ -1,0 +1,83 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main Page</title>
+</head>
+<body>
+
+  <form name="form1" action="main.html" id="qwq">
+    mtext <input type="text" name="mtext"><br>
+    mselect <select name="mselect" onchange="changeSelect(this);">
+      <option value="SelectValue1">Value 1</option>
+      <option value="SelectValue2">Value 2</option>
+      <option value="selectValue3">Value 3</option>
+    </select>
+
+    <table border="1" width="60%">
+      <tr>
+        <td>
+          mlcheckbox <input type="checkbox" name="mlcheckbox"><br>
+          mlcheckbox <input type="checkbox" name="mlcheckbox"><br>
+          mlcheckbox <input type="checkbox" name="mlcheckbox"><br>
+        </td>
+        <td>
+          mrcheckbox <input type="checkbox" name="mrcheckbox">
+        </td>
+      </tr>
+    </table>
+
+    <input type="button" name="button1" value="button1" onclick="chkboxButton(this);">
+    <input type="button" name="button2" value="button2" onclick="chkboxButton(this);">
+    <input type="button" name="button3" value="button3" onclick="openWindow();">
+    <input type="button" name="submit1" value="submit">
+  </form>
+
+</body>
+</html>
+
+
+<script>
+  function changeSelect(object){
+    document.getElementsByName("mtext")[0].setAttribute("value", object.value);
+  }
+
+  function chkboxButton(object) {
+    if(object.name == "button1"){
+      var checkArray = document.getElementsByName("mlcheckbox");
+      var unCheckArray = document.getElementsByName("mrcheckbox");
+    } else if(object.name == "button2"){
+      var checkArray = document.getElementsByName("mrcheckbox");
+      var unCheckArray = document.getElementsByName("mlcheckbox");
+    }
+    for(i=0; i < checkArray.length; i++){
+      checkArray[i].checked = true;
+    }
+    for(j=0; j < unCheckArray.length; j++){
+      unCheckArray[j].checked = false;
+    }
+    alert("選擇的選項數量：" + checkArray.length);
+  }
+
+  function openWindow(){
+    window.open("popupView.html", "popupWindow", "width=350, height=350");
+  }
+
+  function callback(optionName) {
+    var select = document.getElementsByName("mselect");
+    var option = document.createElement("option");
+    option.value = optionName;
+    option.text = optionName;
+    select[0].appendChild(option);
+  }
+
+  document.getElementsByName("submit1")[0].onclick = function (e) {
+    e.preventDefault();
+    var mtext = document.getElementsByName("mtext")[0].value;
+    if(mtext == ""){
+      alert("請輸入 mtext 值！");
+    } else{
+      document.getElementsByName("form1")[0].submit();
+    }
+  }
+
+</script>
