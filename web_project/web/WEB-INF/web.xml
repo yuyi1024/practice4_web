@@ -8,13 +8,12 @@
 
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
-        <servlet-name>HelloWorld</servlet-name>
-        <!--  <jsp-file>/index.jsp</jsp-file> -->
-        <servlet-class>com.demo.helloworld.HelloWorld</servlet-class>
+        <servlet-name>B8</servlet-name>
+        <servlet-class>com.java.B8</servlet-class>
 
     </servlet>
     <servlet-mapping>
-        <servlet-name>HelloWorld</servlet-name>
-        <url-pattern>/HelloWorld</url-pattern>
+        <servlet-name>B8</servlet-name>
+        <url-pattern>/B8</url-pattern>
     </servlet-mapping>
 </web-app>
