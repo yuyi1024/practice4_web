@@ -1,4 +1,4 @@
-<%@ page import="java.io.UnsupportedEncodingException" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: yuyinlee
   Date: 2019/1/18
@@ -22,7 +22,6 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>B3-1</title>
 </head>
 <body>

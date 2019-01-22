@@ -27,28 +27,28 @@ public class B8 extends HttpServlet {
 
             for(int i = 0; i < layer1Lists.getLength(); i++){
                 Node layer1Item = layer1Lists.item(i);
-            System.out.println();
+                System.out.println();
+
                 if(layer1Item.getNodeType() == Node.ELEMENT_NODE){
-                System.out.print("-" + layer1Item.getNodeName());
+                    System.out.print("-" + layer1Item.getNodeName());
 
-                    if(layer1Item.hasChildNodes()){
-                        NodeList layer2Lists = layer1Item.getChildNodes();
+                    NodeList layer2Lists = layer1Item.getChildNodes();
 
-                        for(int j = 0; j < layer2Lists.getLength(); j++){
-                            Node layer2Item = layer2Lists.item(j);
+                    for(int j = 0; j < layer2Lists.getLength(); j++){
+                        Node layer2Item = layer2Lists.item(j);
 
-                            if(layer2Item.getNodeType() == Node.ELEMENT_NODE){
-                            System.out.println();
-                            System.out.print("--" + layer2Item.getNodeName() + " : " + layer2Item.getTextContent());
-                                submap.put(layer2Item.getNodeName(), layer2Item.getTextContent());
-                            }else if(layer2Item.getNodeType() == Node.TEXT_NODE && layer2Item.getTextContent().trim().length() > 0){
-                            System.out.print(" : " + layer2Item.getTextContent());
-                                submap.put(null, layer2Item.getTextContent());
-                            }
+                        if(layer2Item.getNodeType() == Node.ELEMENT_NODE){
+                        System.out.println();
+                        System.out.print("--" + layer2Item.getNodeName() + " : " + layer2Item.getTextContent());
+                            submap.put(layer2Item.getNodeName(), layer2Item.getTextContent());
+                        }else if(layer2Item.getNodeType() == Node.TEXT_NODE && layer2Item.getTextContent().trim().length() > 0){
+                        System.out.print(" : " + layer2Item.getTextContent());
+                            submap.put(null, layer2Item.getTextContent());
                         }
-                        map.put(layer1Item.getNodeName(), (LinkedHashMap<String, String>) submap.clone());
-                        submap.clear();
                     }
+                    map.put(layer1Item.getNodeName(), (LinkedHashMap<String, String>) submap.clone());
+                    submap.clear();
+
                 }
             }
             request.setAttribute("map", map);
