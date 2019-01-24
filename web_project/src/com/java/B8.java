@@ -27,10 +27,10 @@ public class B8 extends HttpServlet {
 
             for(int i = 0; i < layer1Lists.getLength(); i++){
                 Node layer1Item = layer1Lists.item(i);
-                System.out.println();
+//                System.out.println();
 
                 if(layer1Item.getNodeType() == Node.ELEMENT_NODE){
-                    System.out.print("-" + layer1Item.getNodeName());
+//                    System.out.print("-" + layer1Item.getNodeName());
 
                     NodeList layer2Lists = layer1Item.getChildNodes();
 
@@ -38,11 +38,11 @@ public class B8 extends HttpServlet {
                         Node layer2Item = layer2Lists.item(j);
 
                         if(layer2Item.getNodeType() == Node.ELEMENT_NODE){
-                        System.out.println();
-                        System.out.print("--" + layer2Item.getNodeName() + " : " + layer2Item.getTextContent());
+//                        System.out.println();
+//                        System.out.print("--" + layer2Item.getNodeName() + " : " + layer2Item.getTextContent());
                             submap.put(layer2Item.getNodeName(), layer2Item.getTextContent());
                         }else if(layer2Item.getNodeType() == Node.TEXT_NODE && layer2Item.getTextContent().trim().length() > 0){
-                        System.out.print(" : " + layer2Item.getTextContent());
+//                        System.out.print(" : " + layer2Item.getTextContent());
                             submap.put(null, layer2Item.getTextContent());
                         }
                     }

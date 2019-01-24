@@ -1,0 +1,410 @@
+<html>
+    <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+    </head>
+        
+    <body>
+        <form name="form1" method="get" action="">
+        <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
+               <tr valign="top">
+               <td align="center" valign="top">
+               <table width="98%"  border="1" align="center" cellpadding="1" cellspacing="1" bordercolor="#8AADD0">
+               <tr>
+               <td colspan="2" align="center" valign="middle" class="tb-4">【申辦案件數量統計】</td>　
+	       </tr>
+               <tr>
+               <td width="14%" align="center" valign="middle" class="tb-1" rowspan="2">	區處</td>
+               <td width="86%">
+               <input name="qry_ou_s" type="hidden" value=""/>&nbsp;
+               <input type="radio"  id="R1"  value="1" name="area_radio">全公司&nbsp;&nbsp;&nbsp;
+               <input type="radio"  id="R2"  value="2" name="area_radio">區&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="radio"  id="R3"  value="3" name="area_radio">站所&nbsp;
+               </td>
+               </tr>
+               <tr>
+               <td width="86%">
+               <div id = 'd1' >
+                   <select id="area1" name="area1"> 
+                        <option value="01" selected>第一區</option>
+                        <option value="02">第二區</option>
+                        <option value="03">第三區</option>
+                        <option value="04">第四區</option>
+                        <option value="05">第五區</option>
+                        <option value="06">第六區</option>
+                        <option value="07">第七區</option>
+                        <option value="08">第八區</option>
+                        <option value="09">第九區</option>
+                        <option value="10">第十區</option>
+                        <option value="11">第十一區</option>
+                        <option value="12">第十二區</option>  									                                                       
+                                                                   
+                   </select>~ 
+                   <select id="area2" name="area2"> 
+                        <option value="01" selected>第一區</option>									                                                       
+                        <option value="02">第二區</option>
+                        <option value="03">第三區</option>
+                        <option value="04">第四區</option>
+                        <option value="05">第五區</option>
+                        <option value="06">第六區</option>
+                        <option value="07">第七區</option>
+                        <option value="08">第八區</option>
+                        <option value="09">第九區</option>
+                        <option value="10">第十區</option>
+                        <option value="11">第十一區</option>
+                        <option value="12">第十二區</option>            
+                        </select>
+             </div>
+             <div id = 'd2' >
+                 <select id="area3" name="area3" onchange="setOptions(this.value);"> 
+                    <option value="000" selected>(請選擇)</option>
+                    <option value="01">第一站</option>									                                                       
+                    <option value="02">第二站</option>
+                    <option value="03">第三站</option>
+                    <option value="04">第四站</option>
+                    <option value="05">第五站</option>
+                    <option value="06">第六站</option>
+                    <option value="07">第七站</option>
+                    <option value="08">第八站</option>
+                    <option value="09">第九站</option>
+                    <option value="10">第十站</option>
+                    <option value="11">第十一站</option>
+                    <option value="12">第十二站</option>                                                   
+                </select>
+
+                    <select name="addx" id="addx" >
+                    <option value="000">(請選擇)</option>
+                 </select>
+                 </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="middle" class="tb-1">日期區間</td>
+            <td>
+                <select id="year1" name="year1" onchange="getDateOptions(this);">
+                    <option value="chyear" selected>請選擇</option>
+                    <option value="2006" >2006</option>
+                    <option value="2007" >2007</option>
+                    <option value="2008" >2008</option>
+                </select>年
+    
+                 <select name="month1" id="month1" onchange="getDateOptions(this);">
+                     <option value="chmm" selected>請選擇</option>
+                     <option value="01">1</option>
+                     <option value="02">2</option>
+                     <option value="03">3</option>
+                     <option value="04">4</option>
+                     <option value="05">5</option>
+                     <option value="06">6</option>
+                     <option value="07">7</option>
+                     <option value="08">8</option>
+                     <option value="09">9</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
+                 </select>月
+    
+                <select id="day1" name="day1">
+                    <option value="chdd" selected>請選擇</option>
+                </select>日~
+                <select id="year2" name="year2" onchange="getDateOptions(this);">
+                    <option value="chyear" selected>請選擇</option>
+                    <option value="2006" >2006</option>
+                    <option value="2007" >2007</option>
+                    <option value="2008" >2008</option>
+                </select>年
+    
+                 <select name="month2" id="month2" onchange="getDateOptions(this);">
+                     <option value="chmm" selected>請選擇</option>
+                     <option value="01">1</option>
+                     <option value="02">2</option>
+                     <option value="03">3</option>
+                     <option value="04">4</option>
+                     <option value="05">5</option>
+                     <option value="06">6</option>
+                     <option value="07">7</option>
+                     <option value="08">8</option>
+                     <option value="09">9</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
+                 </select>月
+
+                <select id="day2" name="day2">
+                    <option value="chdd" selected>請選擇</option>
+                </select>
+                    </td>
+                  </tr>
+             <tr>
+                      <td align="center" valign="middle" class="tb-1">申辦項目</td>
+                       
+                       <td id="chkboxRow">
+                        <input type='checkbox' id='abou' name='abou' value='abou'>廢止&nbsp;&nbsp;
+                        <input type='checkbox' id='aico' name='aico' value='aico'>臨時恢復普通&nbsp;&nbsp;
+                        <input type='checkbox' id='arce' name='arce' value='arce'>通訊地址變更&nbsp;&nbsp;
+                        <input type='checkbox' id='ceae' name='ceae' value='ceae'>過戶(一般過戶)&nbsp;&nbsp;
+                        <input type='checkbox' id='cebh' name='cebh' value='cebh'>過戶(批次作業)&nbsp;&nbsp;
+                        <input type='checkbox' id='cecy' name='cecy' value='cecy'>過戶(公司行號)&nbsp;&nbsp;
+                        <input type='checkbox' id='check' name='check' value='check'>突增水費複查&nbsp;&nbsp;
+                        <input type='checkbox' id='clca' name='clca' value='clca'>取消委託代繳&nbsp;&nbsp;
+                        <input type='checkbox' id='detu' name='detu' value='detu'>復用&nbsp;&nbsp;
+                        <input type='checkbox' id='etat' name='etat' value='etat'>裝置證明&nbsp;&nbsp;
+                        <input type='checkbox' id='hcat' name='hcat' value='hcat'>繳費證明&nbsp;&nbsp;
+                        <input type='checkbox' id='index' name='index' value='index'>自報度數&nbsp;&nbsp;
+                        <input type='checkbox' id='sbcv' name='sbcv' value='sbcv'>（扣繳用戶）停止∕恢復印寄水費收據&nbsp;&nbsp;
+                        <input type='checkbox' id='stau' name='stau' value='stau'>啟用&nbsp;&nbsp;
+                        <input type='checkbox' id='stou' name='stou' value='stou'>停用&nbsp;&nbsp;
+			<button id='selectall' name='selectall'>全選</button>
+												</td>
+                                        </tr>
+                                                                                
+                                    </table>
+                                    <br>
+                                    &nbsp;<button id="B1" name="B1" >產生報表</button>&nbsp;<br>
+                                    <br>
+                                  
+                                </td>
+                            </tr> 
+                            
+                            
+                    </table></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+<script language="JavaScript">
+	
+function setOptions(chosen) {
+	var selbox = document.form1.addx;
+	
+	document.all['addx'].style.display = "";
+	selbox.options.length = 0;
+	switch (chosen){
+	case "000":
+	 
+       selbox.options[selbox.options.length] = new Option('(請選擇)','');
+					
+		break;	
+	case "01":
+	  selbox.options[selbox.options.length] = new Option('基隆','11');
+          selbox.options[selbox.options.length] = new Option('淡水','1B');
+          selbox.options[selbox.options.length] = new Option('瑞芳','1C');
+          selbox.options[selbox.options.length] = new Option('汐止','1D');
+          selbox.options[selbox.options.length] = new Option('萬金','1E');
+          selbox.options[selbox.options.length] = new Option('文山','1F');
+          selbox.options[selbox.options.length] = new Option('雙貢','1G'); 
+		break;
+	case "02":
+	  selbox.options[selbox.options.length] = new Option('桃園','22');
+          selbox.options[selbox.options.length] = new Option('中壢','23');
+          selbox.options[selbox.options.length] = new Option('楊梅','24');
+          selbox.options[selbox.options.length] = new Option('龜山','25');
+          selbox.options[selbox.options.length] = new Option('林口','2C');
+          selbox.options[selbox.options.length] = new Option('大溪','2D');
+          selbox.options[selbox.options.length] = new Option('大園','2G');
+		break;
+	case "03": 
+		selbox.options[selbox.options.length] = new Option('新竹','31');
+                selbox.options[selbox.options.length] = new Option('竹東','3A');
+                selbox.options[selbox.options.length] = new Option('苗栗','3B');
+                selbox.options[selbox.options.length] = new Option('竹南頭份','3C');
+                selbox.options[selbox.options.length] = new Option('通霄銅鑼','3E');
+                selbox.options[selbox.options.length] = new Option('湖口','3F');
+                selbox.options[selbox.options.length] = new Option('竹北','3H');
+		break;
+	 case "04": 
+		selbox.options[selbox.options.length] = new Option('台中','41');
+                selbox.options[selbox.options.length] = new Option('大里','47');
+                selbox.options[selbox.options.length] = new Option('南投','4B');
+                selbox.options[selbox.options.length] = new Option('竹山','4C');
+                selbox.options[selbox.options.length] = new Option('埔里','4D');
+                selbox.options[selbox.options.length] = new Option('霧峰','4E');
+                selbox.options[selbox.options.length] = new Option('豐原','4F');
+                selbox.options[selbox.options.length] = new Option('東勢','4G');
+                selbox.options[selbox.options.length] = new Option('水里','4H');
+                selbox.options[selbox.options.length] = new Option('后里','4J');
+                selbox.options[selbox.options.length] = new Option('清水','4K');
+                selbox.options[selbox.options.length] = new Option('大甲','4L');
+                selbox.options[selbox.options.length] = new Option('烏日','4N');
+                selbox.options[selbox.options.length] = new Option('沙鹿','4P');
+                selbox.options[selbox.options.length] = new Option('草屯','4R');
+                selbox.options[selbox.options.length] = new Option('大雅','4T');
+		break;
+		case "05": 
+		selbox.options[selbox.options.length] = new Option('嘉義','51');
+                selbox.options[selbox.options.length] = new Option('朴子','5B');
+                selbox.options[selbox.options.length] = new Option('義竹','5C');
+                selbox.options[selbox.options.length] = new Option('北港','5E');
+                selbox.options[selbox.options.length] = new Option('斗南','5F');
+                selbox.options[selbox.options.length] = new Option('台西','5G');
+                selbox.options[selbox.options.length] = new Option('斗六','5H');
+                selbox.options[selbox.options.length] = new Option('西螺','5J');
+                selbox.options[selbox.options.length] = new Option('古坑','5K');
+                selbox.options[selbox.options.length] = new Option('虎尾','5M');
+                selbox.options[selbox.options.length] = new Option('新港','5N');
+                selbox.options[selbox.options.length] = new Option('林內','5P');
+                selbox.options[selbox.options.length] = new Option('土庫','5R');
+                selbox.options[selbox.options.length] = new Option('崙背','5T');
+                selbox.options[selbox.options.length] = new Option('竹崎','5X');
+                selbox.options[selbox.options.length] = new Option('民雄','5Y');
+		break;
+	 case "06": 
+		selbox.options[selbox.options.length] = new Option('台南','60');
+                selbox.options[selbox.options.length] = new Option('新市','63');
+                selbox.options[selbox.options.length] = new Option('歸仁','65');
+                selbox.options[selbox.options.length] = new Option('白河','66');
+                selbox.options[selbox.options.length] = new Option('佳里','68');
+                selbox.options[selbox.options.length] = new Option('新營','6A');
+                selbox.options[selbox.options.length] = new Option('玉井','6B');
+                selbox.options[selbox.options.length] = new Option('麻豆','6C');
+                selbox.options[selbox.options.length] = new Option('永康','6H');
+		break;
+		case "07": 
+		selbox.options[selbox.options.length] = new Option('高雄','71');
+                selbox.options[selbox.options.length] = new Option('鳳山','74');
+                selbox.options[selbox.options.length] = new Option('路竹','75');
+                selbox.options[selbox.options.length] = new Option('岡山','76');
+                selbox.options[selbox.options.length] = new Option('楠梓','77');
+                selbox.options[selbox.options.length] = new Option('旗山','7A');
+                selbox.options[selbox.options.length] = new Option('屏東','7B');
+                selbox.options[selbox.options.length] = new Option('東港','7C');
+                selbox.options[selbox.options.length] = new Option('澎湖','7D');
+                selbox.options[selbox.options.length] = new Option('恆春','7E');
+                selbox.options[selbox.options.length] = new Option('高樹','7J');
+                selbox.options[selbox.options.length] = new Option('美濃','7K');
+		break;
+		case "08": 
+		selbox.options[selbox.options.length] = new Option('宜蘭北區','8A');
+                selbox.options[selbox.options.length] = new Option('宜蘭南區','8B');
+		break;
+		case "09": 
+		selbox.options[selbox.options.length] = new Option('花蓮','9A');
+                selbox.options[selbox.options.length] = new Option('吉安','9B');
+                selbox.options[selbox.options.length] = new Option('鳳林','9D');
+                selbox.options[selbox.options.length] = new Option('玉里','9F');
+		break;
+		case "10": 
+		selbox.options[selbox.options.length] = new Option('台東','AA');
+                selbox.options[selbox.options.length] = new Option('池上','AB');
+                selbox.options[selbox.options.length] = new Option('成功','AE');
+                selbox.options[selbox.options.length] = new Option('太麻里','AF');
+		break;
+		case "11": 
+		selbox.options[selbox.options.length] = new Option('彰化','BA');
+                selbox.options[selbox.options.length] = new Option('北斗','BB');
+                selbox.options[selbox.options.length] = new Option('員林','BD');
+                selbox.options[selbox.options.length] = new Option('二水','BE');
+                selbox.options[selbox.options.length] = new Option('鹿港','BG');
+                selbox.options[selbox.options.length] = new Option('二林','BH');
+                selbox.options[selbox.options.length] = new Option('溪湖','BM');
+                selbox.options[selbox.options.length] = new Option('花壇','BN');
+		break;
+		case "12": 
+		selbox.options[selbox.options.length] = new Option('板橋','C1');
+                selbox.options[selbox.options.length] = new Option('新莊','C3');
+                selbox.options[selbox.options.length] = new Option('蘆洲','C4');
+                selbox.options[selbox.options.length] = new Option('樹林','C5');
+                selbox.options[selbox.options.length] = new Option('鶯歌','C6');
+                selbox.options[selbox.options.length] = new Option('泰山','C7');
+                selbox.options[selbox.options.length] = new Option('土城','CH');
+		break;																											
+	default:
+		
+	}
+}
+
+document.getElementById("R1").onchange = function () {
+    document.getElementById("d1").style.display = "none";
+    document.getElementById("d2").style.display = "none";
+}
+
+document.getElementById("R2").onchange = function () {
+    document.getElementById("d1").style.display = "block";
+    document.getElementById("d2").style.display = "none";
+}
+
+document.getElementById("R3").onchange = function () {
+    document.getElementById("d1").style.display = "none";
+    document.getElementById("d2").style.display = "block";
+}
+
+document.getElementById("selectall").onclick = function () {
+    event.preventDefault();
+    var chkbox = document.getElementById("chkboxRow").firstElementChild;
+    while (chkbox != null){
+        chkbox.checked = true;
+        chkbox = chkbox.nextElementSibling;
+    }
+}
+
+document.getElementById("B1").onclick = function () {
+    event.preventDefault();
+
+    var check1 = false;
+    var check2 = false;
+
+    var year1 = document.getElementById("year1").value;
+    var month1 = document.getElementById("month1").value;
+    var day1 = document.getElementById("day1").value;
+    var date1 = new Date(year1, month1, day1);
+    var year2 = document.getElementById("year2").value;
+    var month2 = document.getElementById("month2").value;
+    var day2 = document.getElementById("day2").value;
+    var date2 = new Date(year2, month2, day2);
+
+    if(date1.getTime() <= date2.getTime()){
+        check1 = true;
+    } else{
+        alert("結束日期須大於開始日期");
+    }
+
+    var row = document.getElementById("chkboxRow");
+    var ele = row.firstElementChild;
+    while (ele != null && check2 == false){
+        if(ele.checked == true){
+            check2 = true;
+            break;
+        }
+        ele = ele.nextElementSibling;
+    }
+    if(check2 == false){
+        alert("至少須選擇一項申辦項目");
+    }
+    if(check1 == true && check2 == true){
+        window.open("", "");
+    }
+}
+
+function getDateOptions(object) {
+    var index = 0;
+    if(object.name == "year1" || object.name == "month1"){
+        index = 1;
+    } else if(object.name == "year2" || object.name == "month2"){
+        index = 2;
+    }
+
+    var year = document.getElementById("year" + index).value;
+    var month = document.getElementById("month" + index).value;
+    var date = new Date(year, month, 0);
+    var daysInMonth = date.getDate();
+    console.log(index);
+    var dateSelectBox = document.getElementById("day" + index);
+    var lastDateElement = dateSelectBox.lastElementChild;
+
+    while(lastDateElement.getAttribute("value") != "chdd"){
+        dateSelectBox.removeChild(lastDateElement);
+        lastDateElement = dateSelectBox.lastElementChild;
+    }
+    for(var i = 1; i <= daysInMonth; i++){
+        var element = document.createElement("option");
+        var text = document.createTextNode(i);
+        element.appendChild(text);
+        element.setAttribute("value", i);
+        dateSelectBox.appendChild(element);
+    }
+}
+
+</script>		

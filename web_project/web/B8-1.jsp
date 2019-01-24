@@ -21,12 +21,9 @@
     LinkedHashMap<String,LinkedHashMap<String, String>> map = new LinkedHashMap();
     LinkedHashMap<String, String> submap = new LinkedHashMap();
 
-    Node n = null;
-
     for(int i = 0; i < layer1Lists.getLength(); i++){
         Node layer1Item = layer1Lists.item(i);
-        n = layer1Lists.item(i);
-//        System.out.println();
+
         if(layer1Item.getNodeType() == Node.ELEMENT_NODE){
 //            System.out.print("-" + layer1Item.getNodeName());
 
@@ -38,17 +35,18 @@
                 if(layer2Item.getNodeType() == Node.ELEMENT_NODE){
 //                        System.out.println();
 //                        System.out.print("--" + layer2Item.getNodeName() + " : " + layer2Item.getTextContent());
-                    submap.put(layer2Item.getNodeName(), layer2Item.getTextContent());
+                    submap.put(layer2Item.getNodeName() + "_" + j, layer2Item.getTextContent());
                 }else if(layer2Item.getNodeType() == Node.TEXT_NODE && layer2Item.getTextContent().trim().length() > 0){
 //                        System.out.print(" : " + layer2Item.getTextContent());
-                    submap.put(null, layer2Item.getTextContent());
+                    submap.put("_" + j, layer2Item.getTextContent());
                 }
             }
-            map.put(layer1Item.getNodeName(), (LinkedHashMap<String, String>) submap.clone());
+            map.put(layer1Item.getNodeName() + "_" + i, (LinkedHashMap<String, String>) submap.clone());
             submap.clear();
 
         }
     }
+    String str = "";
 %>
 
 <html>
@@ -56,26 +54,24 @@
     <title>B8-1</title>
 </head>
 <body>
-    <h3><%= elemect.getAttribute("xmlns")%></h3>
-    <h3><%= elemect.getTagName()%></h3>
-    <h3><%= n.getNodeValue()%></h3>
-    <h3><%= elemect.getAttribute("xmlns")%></h3>
     <ul>
         <%
             for (Object o : map.keySet()){ ;
         %>
-                <li><%= o%>
+                <li><%= o.toString().replaceAll("_\\d+$", "")%>
         <%
                 for (Object p : map.get(o).keySet()){
-                    if(p == null){
+                    str = p.toString().replaceAll("_\\d+$", "");
+                    if(str.equals("")){
 
         %>
-                    : <%= map.get(o).get(p)%></li>
+                    : <%= map.get(o).get(p)%>
+                </li>
         <%
                     } else{
         %>
                     <ul>
-                        <li><%= p%> : <%= map.get(o).get(p)%></li>
+                        <li><%= str%> : <%= map.get(o).get(p)%></li>
                     </ul>
                 </li>
         <%

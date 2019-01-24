@@ -16,4 +16,26 @@
         <servlet-name>B8</servlet-name>
         <url-pattern>/B8</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>A3</servlet-name>
+        <servlet-class>com.java.A3</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>A3</servlet-name>
+        <url-pattern>/A3</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>page2</servlet-name>
+        <servlet-class>com.java.B8</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>page2</servlet-name>
+        <url-pattern>/page2</url-pattern>
+    </servlet-mapping>
+
+    <PASS_CODE>dooooooog</PASS_CODE>
 </web-app>
