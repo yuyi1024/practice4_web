@@ -24,7 +24,7 @@
                </tr>
                <tr>
                <td width="86%">
-               <div id = 'd1' >
+               <div id = 'd1' style="display: none;">
                    <select id="area1" name="area1"> 
                         <option value="01" selected>第一區</option>
                         <option value="02">第二區</option>
@@ -55,7 +55,7 @@
                         <option value="12">第十二區</option>            
                         </select>
              </div>
-             <div id = 'd2' >
+             <div id = 'd2' style="display: none;">
                  <select id="area3" name="area3" onchange="setOptions(this.value);"> 
                     <option value="000" selected>(請選擇)</option>
                     <option value="01">第一站</option>									                                                       
@@ -342,10 +342,10 @@ document.getElementById("selectall").onclick = function () {
 
 document.getElementById("B1").onclick = function () {
     event.preventDefault();
-
     var check1 = false;
     var check2 = false;
 
+    // 結束日期須大於開始日期
     var year1 = document.getElementById("year1").value;
     var month1 = document.getElementById("month1").value;
     var day1 = document.getElementById("day1").value;
@@ -358,9 +358,10 @@ document.getElementById("B1").onclick = function () {
     if(date1.getTime() <= date2.getTime()){
         check1 = true;
     } else{
-        alert("結束日期須大於開始日期");
+        alert("結束日期需大於開始日期");
     }
 
+    // chkbox 至少擇一
     var row = document.getElementById("chkboxRow");
     var ele = row.firstElementChild;
     while (ele != null && check2 == false){
@@ -373,11 +374,13 @@ document.getElementById("B1").onclick = function () {
     if(check2 == false){
         alert("至少須選擇一項申辦項目");
     }
+
     if(check1 == true && check2 == true){
         window.open("", "");
     }
 }
 
+// 取得對應年月的總天數
 function getDateOptions(object) {
     var index = 0;
     if(object.name == "year1" || object.name == "month1"){

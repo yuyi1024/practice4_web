@@ -21,7 +21,7 @@
 </head>
 <body>
     <p class="msg"><%= msg%></p>
-    <form name="form1" method="POST" action="./A3">
+    <form name="form1" method="POST" action="A3">
         <label>Pass Code</label>
         <input name="passCode" type="text" value="<%= passCode%>">
         <button type="submit" value="submit">送出</button>

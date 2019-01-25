@@ -19,14 +19,14 @@
 <body>
     <p class="alert"><%= msg %></p>
 
-    <form name="drinkGetForm" method="GET" action="two.jsp">
-        <jsp:include page="/drinkForm.jsp">
+    <form name="drinkGetForm" method="GET" action="B3-two">
+        <jsp:include page="/B3/drinkForm.jsp">
             <jsp:param name="method" value="GET"></jsp:param>
         </jsp:include>
     </form>
 
-    <form name="drinkPostForm" method="Post" action="two.jsp">
-        <jsp:include page="/drinkForm.jsp">
+    <form name="drinkPostForm" method="Post" action="B3-two">
+        <jsp:include page="/B3/drinkForm.jsp">
             <jsp:param name="method" value="POST"></jsp:param>
         </jsp:include>
     </form>

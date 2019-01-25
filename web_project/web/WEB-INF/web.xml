@@ -6,27 +6,82 @@
            version="4.0">
 
 
+    <display-name>Archetype Created Web Application</display-name>
+
     <filter>
         <filter-name>LogFilter</filter-name>
         <filter-class>com.java.LogFilter</filter-class>
         <init-param>
             <param-name>excludedPages</param-name>
-            <param-value>/login.jsp,/auth.jsp</param-value>
+            <param-value>/A4/login.jsp,/A4/auth.jsp</param-value>
         </init-param>
     </filter>
-
     <filter-mapping>
         <filter-name>LogFilter</filter-name>
+        <url-pattern>/A4/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>com.java.CharsetFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
         <url-pattern>/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
+    <PASS_CODE>dooooooooooooooooooog</PASS_CODE>
 
-    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>B1</servlet-name>
+        <jsp-file>/B1/hello.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>B1</servlet-name>
+        <url-pattern>/B1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>B3-read</servlet-name>
+        <jsp-file>/B3/read.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>B3-read</servlet-name>
+        <url-pattern>/B3-read</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>B3-one</servlet-name>
+        <jsp-file>/B3/one.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>B3-one</servlet-name>
+        <url-pattern>/B3-one</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>B3-two</servlet-name>
+        <jsp-file>/B3/two.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>B3-two</servlet-name>
+        <url-pattern>/B3-two</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>B8-1</servlet-name>
+        <jsp-file>/B8/B8-1.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>B8-1</servlet-name>
+        <url-pattern>/B8-1</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>B8</servlet-name>
         <servlet-class>com.java.B8</servlet-class>
-
     </servlet>
     <servlet-mapping>
         <servlet-name>B8</servlet-name>
@@ -34,9 +89,35 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>A1</servlet-name>
+        <jsp-file>/A1/A1.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>A1</servlet-name>
+        <url-pattern>/A1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>A3-door</servlet-name>
+        <jsp-file>/A3/door.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>A3-door</servlet-name>
+        <url-pattern>/A3-door</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>A3-livingRoom</servlet-name>
+        <jsp-file>/A3/livingRoom.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>A3-livingRoom</servlet-name>
+        <url-pattern>/A3-livingRoom</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>A3</servlet-name>
         <servlet-class>com.java.A3</servlet-class>
-
     </servlet>
     <servlet-mapping>
         <servlet-name>A3</servlet-name>
@@ -44,14 +125,39 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>page2</servlet-name>
-        <servlet-class>com.java.B8</servlet-class>
-
+        <servlet-name>A4</servlet-name>
+        <jsp-file>/A4/portal_index.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>page2</servlet-name>
-        <url-pattern>/page2</url-pattern>
+        <servlet-name>A4</servlet-name>
+        <url-pattern>/A4</url-pattern>
     </servlet-mapping>
 
-    <PASS_CODE>dooooooog</PASS_CODE>
+    <servlet>
+        <servlet-name>A4-login</servlet-name>
+        <jsp-file>/A4/login.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>A4-login</servlet-name>
+        <url-pattern>/A4-login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>A4-auth</servlet-name>
+        <jsp-file>/A4/auth.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>A4-auth</servlet-name>
+        <url-pattern>/A4-auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>A4-logout</servlet-name>
+        <jsp-file>/A4/logout.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>A4-logout</servlet-name>
+        <url-pattern>/A4-logout</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -12,7 +12,7 @@
 </head>
 <body>
     <h3>請登入</h3>
-    <form name="form1" method="POST" action="auth.jsp">
+    <form name="form1" method="POST" action="A4-auth">
         <label>Account Name</label>
         <input name="account" type="text">
         <button type="submit" value="submit">送出</button>

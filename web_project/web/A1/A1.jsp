@@ -7,10 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-
     Calendar calendar = Calendar.getInstance();
     int thisYear = calendar.get(Calendar.YEAR);
-
 %>
 <html>
 <head>
@@ -51,23 +49,26 @@
 </html>
 
 <script>
+    // 取得對應年月的總天數
    function getDateOptions() {
        var year = document.getElementById("year").value;
        var month = document.getElementById("month").value;
-       var date = new Date(year, month, 0);
+       var date = new Date(year, month, 0); // return 最大日期
        var daysInMonth = date.getDate();
 
        var dateSelectBox = document.getElementById("date");
        var lastDateElement = dateSelectBox.lastElementChild;
 
+       // remove 先前產生的總天數 options
        while(lastDateElement.getAttribute("name") != "non-select"){
            dateSelectBox.removeChild(lastDateElement);
            lastDateElement = dateSelectBox.lastElementChild;
        }
+
+       // 加入新的總天數 options
        for(var i = 1; i <= daysInMonth; i++){
            var element = document.createElement("option");
            var text = document.createTextNode(i);
-
            element.appendChild(text);
            element.setAttribute("value", i);
            dateSelectBox.appendChild(element);

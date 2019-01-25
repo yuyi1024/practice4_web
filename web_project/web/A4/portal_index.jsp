@@ -7,17 +7,18 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String account = request.getParameter("account");
-    if(account != null){
-        session.setAttribute("account", account);
-    }
-    response.sendRedirect("portal_index.jsp");
+    String account = (String) session.getAttribute("account");
 %>
 <html>
 <head>
-    <title>A4 - auth</title>
+    <title>A4 - protal_index</title>
 </head>
 <body>
+    <h3>You are login now！</h3>
+    <p>Account Name： <%= account%></p>
 
+    <p>
+        <a href="A4-logout">登出</a>
+    </p>
 </body>
 </html>

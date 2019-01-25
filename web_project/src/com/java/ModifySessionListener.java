@@ -26,6 +26,4 @@ public class ModifySessionListener implements HttpSessionAttributeListener {
     public void attributeReplaced(HttpSessionBindingEvent httpSessionBindingEvent){
 
     }
-
-
 }
