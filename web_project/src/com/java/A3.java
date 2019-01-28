@@ -8,17 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class A3 extends HttpServlet{
+    private String passCode;
+
+    public void init(){
+        try{
+            super.init();
+            passCode = getServletContext().getInitParameter("PASS_CODE");
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response){
         try {
-            Element element = new WebXmlGetter().getElement();  //<web-app>
-
-            Node node = element.getElementsByTagName("PASS_CODE").item(0);  //<PASS_CODE>
-            Node valueNode = node.getChildNodes().item(0);  // #text
-            String xmlPassCode = valueNode.getTextContent();
-
             String paramPassCode = request.getParameter("passCode");
-
-            if(xmlPassCode.equals(paramPassCode)){
+            if(paramPassCode.equals(passCode)){
                 request.getRequestDispatcher("A3-livingRoom").forward(request, response);
             } else {
                 request.getRequestDispatcher("A3-door").forward(request, response);

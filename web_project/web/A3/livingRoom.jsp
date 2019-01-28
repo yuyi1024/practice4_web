@@ -14,7 +14,7 @@
     <title>A3</title>
 </head>
 <body>
-    <p>輸入正確</p>
-    <p>Pass Code：<%= passCode%></p>
+    <h4>輸入正確</h4>
+    <h4>Pass Code：<%= passCode%></h4>
 </body>
 </html>

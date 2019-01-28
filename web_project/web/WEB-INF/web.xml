@@ -5,8 +5,15 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="4.0">
 
+    <display-name>Web Practice</display-name>
 
-    <display-name>Archetype Created Web Application</display-name>
+    <context-param>
+        <param-name>fullName</param-name>
+        <param-value>霸雕爆裂丸</param-value>
+    </context-param>    <context-param>
+        <param-name>PASS_CODE</param-name>
+        <param-value>dooooooooooooooooooog</param-value>
+    </context-param>
 
     <filter>
         <filter-name>LogFilter</filter-name>
@@ -31,8 +38,6 @@
         <url-pattern>/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
-
-    <PASS_CODE>dooooooooooooooooooog</PASS_CODE>
 
     <servlet>
         <servlet-name>B1</servlet-name>
@@ -71,17 +76,16 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>B8-1</servlet-name>
-        <jsp-file>/B8/B8-1.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>B8-1</servlet-name>
-        <url-pattern>/B8-1</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>B8</servlet-name>
-        <servlet-class>com.java.B8</servlet-class>
+        <servlet-class>com.java.B8Servlet</servlet-class>
+        <init-param>
+            <param-name>englishName</param-name>
+            <param-value>Bawan</param-value>
+        </init-param>
+        <init-param>
+            <param-name>chineseName</param-name>
+            <param-value>霸丸</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>B8</servlet-name>

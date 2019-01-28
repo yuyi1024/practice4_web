@@ -17,6 +17,7 @@
         var optionName = document.getElementsByName("ptext")[0].value;
         if(optionName == ""){
             alert("請輸入 ptext 值！");
+            document.getElementById("ptext").focus();
         } else{
             window.opener.callback(optionName);
             window.close();

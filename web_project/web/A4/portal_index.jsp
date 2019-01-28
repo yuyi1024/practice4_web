@@ -14,6 +14,7 @@
     <title>A4 - protal_index</title>
 </head>
 <body>
+    <%--<p><%= session.getId()%></p>--%>
     <h3>You are login now！</h3>
     <p>Account Name： <%= account%></p>
 
